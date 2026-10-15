@@ -279,6 +279,8 @@ Non-looping types export as one-shots (`destroyed`, `hurt`, `attack`, `use`, `op
 
 ## Unity integration
 
+Details (scripts, JSON schema, auto-import): [`frameforge/unity/README.md`](frameforge/unity/README.md).
+
 ### Automated (MCP)
 
 ```text
@@ -327,7 +329,7 @@ Sibling `*_sheet.json` must sit next to the PNG.
 │   ├── backend/            # FastAPI + Comfy workflow JSON
 │   ├── frontend/           # Angular UI
 │   ├── mcp_server/         # MCP stdio → REST
-│   ├── unity/              # FrameforgeSheetImport, etc.
+│   ├── unity/              # Unity importers + README
 │   ├── tests/
 │   ├── data/               # local projects (gitignored content)
 │   ├── logs/               # runtime logs (gitignored)
