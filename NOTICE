@@ -1,0 +1,9 @@
+Frameforge
+Copyright (c) 2026 dreaddy
+
+This product is licensed under the MIT License. See LICENSE.
+
+Third-party components (Angular, FastAPI, ComfyUI workflows/models, Ollama,
+Unity, etc.) remain under their respective licenses and terms. Model weights
+and generated assets are not redistributed by this repository unless explicitly
+included; obtain and use them according to their upstream licenses.

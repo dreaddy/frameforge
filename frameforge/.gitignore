@@ -1,0 +1,15 @@
+backend/.venv/
+backend/workflows/_tmp*
+frontend/node_modules/
+frontend/dist/
+frontend/.angular/
+data/projects/
+data/game_projects/
+data/_smoke/
+logs/
+**/__pycache__/
+*.pyc
+.DS_Store
+.env
+.env.*
+!.env.example

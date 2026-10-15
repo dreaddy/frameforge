@@ -1,0 +1,11 @@
+{
+  "name": "frameforge",
+  "private": true,
+  "description": "Animate images locally for games and export them — UI + MCP for Cursor and other coding agents",
+  "license": "MIT",
+  "scripts": {
+    "start": "powershell -NoProfile -ExecutionPolicy Bypass -File frameforge/start.ps1",
+    "start:nobrowser": "powershell -NoProfile -ExecutionPolicy Bypass -File frameforge/start.ps1 -NoBrowser",
+    "stop": "powershell -NoProfile -ExecutionPolicy Bypass -File frameforge/stop.ps1"
+  }
+}

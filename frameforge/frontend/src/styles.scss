@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,550;9..144,700&family=Manrope:wght@400;500;600&display=swap');
+
+:root {
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Manrope', sans-serif;
+  --ink: #f3efe6;
+  --muted: #a9b0b8;
+  --bg0: #10141a;
+  --bg1: #1a2330;
+  --accent: #ffc478;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  font-family: var(--font-body);
+  color: var(--ink);
+  background:
+    radial-gradient(1200px 600px at 10% -10%, rgba(255, 196, 120, 0.16), transparent 55%),
+    radial-gradient(900px 500px at 90% 0%, rgba(80, 140, 180, 0.18), transparent 50%),
+    linear-gradient(165deg, var(--bg1), var(--bg0) 55%, #0c1015);
+  background-attachment: fixed;
+}
+
+body {
+  line-height: 1.45;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--ink);
+  padding: 0.65rem 1rem;
+  font: inherit;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.btn:hover:not(:disabled) {
+  border-color: rgba(255, 196, 120, 0.45);
+  transform: translateY(-1px);
+}
+
+.btn:disabled {
+  opacity: 0.55;
+  cursor: wait;
+}
+
+.btn.primary {
+  background: linear-gradient(135deg, #ffc478, #e89a4a);
+  color: #1a1208;
+  border-color: transparent;
+  font-weight: 600;
+}
+
+.lightbox-trigger {
+  cursor: zoom-in;
+}

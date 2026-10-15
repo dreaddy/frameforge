@@ -1,0 +1,62 @@
+---
+description: How to start/stop Frameforge and use MCP for animate/export/Unity
+alwaysApply: true
+---
+
+# Frameforge
+
+Product: **animate images for games (local tools) and export them** — UI + MCP for Cursor/agents.
+
+App code lives in `frameforge/`.
+
+## Start / stop (preferred)
+
+Do **not** invent ad-hoc uvicorn/ng commands unless the scripts fail.
+
+**Run and Debug (F5):** configuration **Start** (also **Start (no browser)** / **Stop**).
+
+**npm** from workspace root:
+
+```powershell
+npm run start
+npm run start:nobrowser
+npm run stop
+```
+
+**Scripts / tasks:**
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File frameforge/start.ps1 -NoBrowser
+powershell -NoProfile -ExecutionPolicy Bypass -File frameforge/stop.ps1
+```
+
+- Tasks: **Frameforge: Start** (default build) / **Frameforge: Stop**
+
+## URLs
+
+- UI: `http://127.0.0.1:4200`
+- API: `http://127.0.0.1:8787/health`
+- ComfyUI: `http://127.0.0.1:8000` (required for generation/animation)
+- Logs: `frameforge/logs/`
+
+## MCP (agents)
+
+MCP talks to the REST API. Backend must be running on `:8787`.
+
+Core user intents:
+
+- „Erstelle [X], animiere es und bau es in Unity ein“ → generate → create_animation(s) → select_variant → `install_to_unity` / `install_item_to_unity`
+- „Nimm [Name oder #id] mit allen Animationen und bau sie in Unity ein“ → `find_character` / `find_item` → `install_to_unity` / `install_item_to_unity`
+
+### Unity: Kreatur-Animationen einbauen
+
+1. `install_to_unity(character="<name oder id>")` — exportiert Sheet und kopiert PNG+JSON + Editor-Scripts ins Unity-Projekt (`UNITY_PROJECT_ROOT`).
+2. Unity muss offen sein (unity-mcp). Nach Compile ggf. `Unity_RunCommand` mit `FrameforgeSheetImport.ImportAtPath("Assets/.../_sheet.png")`, falls Auto-Import nicht gelaufen ist.
+3. Ergebnis: geschnittene Sprites, `.anim`-Clips und `.controller` unter `Assets/Creatures/spritesheets/<Name>/`.
+
+Hilfstools: `find_character`, `export_unity_sheet` (nur Export ohne Copy).
+
+### Unity: Item-Animationen einbauen
+
+1. `install_item_to_unity(item="<name oder id>")` → `Assets/Items/spritesheets/<Name>/`.
+2. Hilfstools: `find_item`, `export_item_unity_sheet`, `generate_item`, `create_item_animation` (Presets: `idle`, `destroyed`, `use`, `open` — kein Walk).

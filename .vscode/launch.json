@@ -1,0 +1,26 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Start",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "npm run start",
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "name": "Start (no browser)",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "npm run start:nobrowser",
+      "cwd": "${workspaceFolder}"
+    },
+    {
+      "name": "Stop",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "npm run stop",
+      "cwd": "${workspaceFolder}"
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Frameforge: Start",
+      "type": "shell",
+      "command": "powershell",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder}/frameforge/start.ps1",
+        "-NoBrowser"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/frameforge"
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "clear": true
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "Frameforge: Stop",
+      "type": "shell",
+      "command": "powershell",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder}/frameforge/stop.ps1"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/frameforge"
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      }
+    },
+    {
+      "label": "Frameforge: Backend only",
+      "type": "shell",
+      "command": "powershell",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder}/frameforge/start.ps1",
+        "-BackendOnly"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/frameforge"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Frameforge: Frontend only",
+      "type": "shell",
+      "command": "powershell",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder}/frameforge/start.ps1",
+        "-FrontendOnly",
+        "-NoBrowser"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/frameforge"
+      },
+      "problemMatcher": []
+    }
+  ]
+}

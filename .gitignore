@@ -1,0 +1,49 @@
+# Dependencies & build
+**/node_modules/
+**/dist/
+**/.angular/
+**/.venv/
+**/__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Local runtime data (generated sprites, jobs, logs)
+frameforge/data/game_projects/
+frameforge/data/projects/
+frameforge/data/_smoke/
+frameforge/logs/
+frameforge/backend/workflows/_tmp*
+*.log
+
+# Env / secrets
+.env
+.env.*
+!.env.example
+
+# OS / editor junk
+.DS_Store
+Thumbs.db
+Desktop.ini
+*~
+*.swp
+*.swo
+.idea/
+*.iml
+
+# Local scratch / experiment outputs (test images, one-offs)
+_local/
+# Safety net if anything lands in repo root again
+/*.png
+/*.jpg
+/*.jpeg
+/*.webp
+/*.gif
+
+# Python / tooling
+.coverage
+htmlcov/
+.tox/
+.cache/
